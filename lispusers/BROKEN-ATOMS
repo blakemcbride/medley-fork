@@ -1,6 +1,6 @@
 (DEFINE-FILE-INFO :PACKAGE "INTERLISP" :READTABLE "INTERLISP" :BASE 10)
 
-(FILECREATED "13-Apr-2026 10:49:10" {PROJECTS}<BROKENATOMS>BROKEN-ATOMS.;9 7385   
+(FILECREATED "14-Apr-2026 12:14:44" {PROJECTS}<BROKENATOMS>BROKEN-ATOMS.;10 7207   
 
       :CHANGES-TO (FUNCTIONS WITHOUT-BROKEN-ATOMS TEST-PRETTY-FILE TEST-DEEP-COMPUTATION 
                          CURE-BROKEN-ATOM)
@@ -97,16 +97,15 @@
                                                          (CONDITIONS:INVOKE-RESTART 
                                                                 'CREATE-EXTERNAL-BA (CURE-BROKEN-ATOM
                                                                                      C]
-           (CONDITIONS:RESTART-BIND [(CREATE-MISSING-PACKAGE-BA #'(CL:LAMBDA (V)
-                                                                         (RETFROM 
-                                                                                #'
-                                                                              RESOLVE-MISSING-PACKAGE
-                                                                                V)
-                                                                         V))
+           (CONDITIONS:RESTART-BIND [(CREATE-MISSING-PACKAGE-BA
+                                      #'(CL:LAMBDA (V)
+                                               (RETFROM (FUNCTION RESOLVE-MISSING-PACKAGE)
+                                                      V)
+                                               V))
                                      (CREATE-EXTERNAL-BA #'(CL:LAMBDA (V)
-                                                                  (RETFROM 
-                                                                         #'
+                                                                  (RETFROM (FUNCTION 
                                                                       RESOLVE-MISSING-EXTERNAL-SYMBOL
+                                                                            )
                                                                          V)
                                                                   V]
                   (PROGN ,@FORMS])
@@ -181,8 +180,8 @@
           (WITHOUT-BROKEN-ATOMS (PRETTYFILEINDEX SOURCE-FILE-NAME NIL OUTPUT-STREAM T))
           (FULLNAME OUTPUT-STREAM)))
 (DECLARE%: DONTCOPY
-  (FILEMAP (NIL (1402 2314 (CURE-BROKEN-ATOM 1402 . 2314)) (2345 2698 (BROKEN-ATOM-PRINTER 2355 . 2696))
- (2730 4575 (WITHOUT-BROKEN-ATOMS 2730 . 4575)) (4681 5009 (TEST-INTERNAL-BA 4681 . 5009)) (5011 5338 
-(TEST-EXTERNAL-BA 5011 . 5338)) (5340 7007 (TEST-DEEP-COMPUTATION 5340 . 7007)) (7009 7362 (
-TEST-PRETTY-FILE 7009 . 7362)))))
+  (FILEMAP (NIL (1403 2315 (CURE-BROKEN-ATOM 1403 . 2315)) (2346 2699 (BROKEN-ATOM-PRINTER 2356 . 2697))
+ (2731 4397 (WITHOUT-BROKEN-ATOMS 2731 . 4397)) (4503 4831 (TEST-INTERNAL-BA 4503 . 4831)) (4833 5160 
+(TEST-EXTERNAL-BA 4833 . 5160)) (5162 6829 (TEST-DEEP-COMPUTATION 5162 . 6829)) (6831 7184 (
+TEST-PRETTY-FILE 6831 . 7184)))))
 STOP
